@@ -47,14 +47,19 @@ second_smallest([7,2,1,3,5,2],6)
 
 
 #REMOVE DUPLICATE ELEMENTS FROM AN ARRAY:
-def remove_duplicate(arr:[int],n:int):
+def remove_duplicate(arr:[int]):
     arr.sort()
-    sorted_arr = []
-    for i in range(0,n):
-        if(arr[i]!=arr[i+1]):
-            sorted_arr.append(arr[i])
 
-    print(sorted_arr)
+    print(arr)
+    n = len(arr)
+    i = 0
+    for j in range(1,n):
+        if(arr[i] != arr[j]):
+            arr[i+1] = arr[j]
+            i+=1
+    del arr[i+1:]
+    print(arr)
+    print(i+1)
 
 
-remove_duplicate([7,2,1,5,2],5) 
+remove_duplicate([5,6,2,2,6,4,5,6,1]) 
