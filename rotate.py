@@ -49,3 +49,20 @@ def rotate_left(arr:[int],k:int):
 
 rotate_left([-1],1)
 rotate_left([1,2,3,4,5,6,7],3)
+
+
+#USING REVERSE FUNCTION TO REDUCE SPACE COMPLEXITY:
+def rotate_reversely(arr:[int],k:int):
+
+    n = len(arr)
+    k = k % n
+    arr.reverse()
+
+    arr[:k] = reversed(arr[:k])
+    arr[k:] = reversed(arr[k:])
+
+
+    print(arr)
+
+rotate_reversely([1,2,3,4,5,6,7],4)
+    
