@@ -57,3 +57,52 @@ arr2 = [1, 2, 3, 4, 4, 5, 11, 12]
 
 union_of_array(arr1,arr2)
 union_using_two_pointer(arr1,arr2)
+
+
+
+#INTERSECTION OF TWO ARRAYS:
+
+def intersection(a,b):
+    m = len(a)
+    n = len(b)
+    ans = []
+    visited = [0] * n
+
+    for num_a in a:
+        for j,num_b in enumerate(b):
+            if(num_a==num_b and visited[j] == 0):
+                ans.append(num_b)
+                visited[j] = 1
+                break 
+
+            elif(num_b > num_a):
+                break 
+
+    print(ans)
+    
+intersection([1,2,3,3,4,5,6,7],[3,3,4,4,5,8])
+
+
+#INTERSECTION USING TWO POINTER TO REDUCE TIME COMPLEXITY:
+
+def intersection_arr(a,b):
+    n = len(a)
+    m = len(b)
+    ans = []
+    i =0
+    j =0
+    while(i<n and j<m):
+        if(a[i]<b[j]):
+            i+=1
+
+        elif(a[i]>b[j]):
+            j+=1
+
+
+        elif(a[i] == b[j]):
+            ans.append(a[i])
+            i+=1
+            j+=1
+     
+    print(ans)
+intersection_arr([1,2,3,3,4,5,6,7],[3,3,4,4,5,8])
