@@ -99,7 +99,7 @@ def intersection_arr(a,b):
             j+=1
 
 
-        elif(a[i] == b[j]):
+        else:
             ans.append(a[i])
             i+=1
             j+=1
