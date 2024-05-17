@@ -28,3 +28,18 @@ def missingNum(a:List[int],n:int) -> int:
     # print(val)
 
 missingNum([1,2,4,5],5)
+
+
+#FIND NUMBER THAT APPEARS JUST ONCE:
+def singleNumber(nums: List[int]) -> int:
+    for num in nums:
+        number = num
+        count = 0
+        for other_num in nums:
+            if other_num == number:
+                count += 1
+        if count == 1:
+            return num
+    
+
+print(singleNumber(nums=[4,1,2,1,2]))
