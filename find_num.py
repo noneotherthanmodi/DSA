@@ -43,3 +43,13 @@ def singleNumber(nums: List[int]) -> int:
     
 
 print(singleNumber(nums=[4,1,2,1,2]))
+
+#XOR - a ^ a = 0,  0 ^ a = a
+def singleNumUsingXOR(arr: List[int]) -> int:
+    xor = 0
+    for i in range(len(arr)):
+        xor = xor ^ arr[i]
+    print(xor)
+    # return xor
+
+singleNumUsingXOR([4,1,2,1,2])
