@@ -14,3 +14,32 @@ def longestSubarrayWithSumK(a: [int], k: int) -> int:
                 maxlen = max(maxlen,j-i+1)
             
     return maxlen 
+
+
+#BEST OPTIMIZED : 
+def longestSubarrayWithSumKk(a: [int], k: int) -> int:
+    # Write your code here
+    preSumMap = {}
+    maxlen = 0
+    Sum = 0
+    n = len(a)
+    for i in range(n):
+            
+        Sum += a[i]
+                
+        if Sum==k:
+            maxlen = max(maxlen,i+1)
+                    
+                    
+        rem = Sum-k
+            
+        if rem in preSumMap:
+            length = i - preSumMap[rem]
+            maxlen = max(maxlen,length)
+                
+        if Sum not in preSumMap:
+            preSumMap[Sum] = i
+                
+    return maxlen
+
+print(longestSubarrayWithSumKk([2, 3, 5, 1, 9],10))
