@@ -3,7 +3,7 @@ from collections import Counter
 
 
 
-
+#MORE OPTIMAL ONE ->
 def majorityElement1(nums: List[int]) -> int:
     n = len(nums)
 
@@ -18,19 +18,6 @@ def majorityElement1(nums: List[int]) -> int:
 
 
 majorityElement1([3,2,3])
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
