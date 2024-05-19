@@ -34,7 +34,7 @@ sortColors([2,0,2,1,1,0])
 #               0 0 0 0 0 0         1 1 1 1 1 1   unsorted   2 2 2 2 2 2
 #                                               ~~~~~~~~~~~~
 
-
+#DUTCH NATIONAL FLAG ALGORITHM 
 
 
 def sortColors2(arr: List[int]) -> None:
@@ -58,5 +58,6 @@ def sortColors2(arr: List[int]) -> None:
             arr[mid], arr[high] = arr[high], arr[mid]
             high -= 1
     print(arr)
+    return arr 
 
 sortColors2([2,0,2,1,1,0])
