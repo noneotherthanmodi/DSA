@@ -2,9 +2,29 @@ from typing import List
 from collections import Counter
 
 
-#MOST OPTIMAL ONE ->  MOORE'S VOTING METHOD
 
+#MOST OPTIMAL ONE ->
 def majorityElement1(nums: List[int]) -> int:
+    n = len(nums)
+
+    counter = Counter(nums)
+    
+    for num, count in counter.items():
+        if count > (n//2):
+            print(num)
+
+    return -1
+
+majorityElement1([3,2,3])
+
+
+
+
+
+
+#MORE OPTIMAL ONE ->  MOORE'S VOTING METHOD
+
+def majorityElement2(nums: List[int]) -> int:
     n = len(nums)
     count = 0
     for i in range(n):
@@ -29,48 +49,7 @@ def majorityElement1(nums: List[int]) -> int:
         return element
 
 
-majorityElement1([3,2,3])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#MORE OPTIMAL ONE ->
-def majorityElement2(nums: List[int]) -> int:
-    n = len(nums)
-
-    counter = Counter(nums)
-    
-    for num, count in counter.items():
-        if count > (n//2):
-            print(num)
-
-    return -1
-
-
-
 # majorityElement2([3,2,3])
-
-
-
-
 
 
 
