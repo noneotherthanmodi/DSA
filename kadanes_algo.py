@@ -1,4 +1,4 @@
-#MAXIMUM SUBARRAY SUM - KADANE'S ALGORITHM
+#MAXIMUM SUBARRAY SUM - KADANE'S ALGORITHM    T() : O(N),  S() : O(1)  
 from typing import List
 import sys 
 max_int = sys.maxsize
@@ -10,12 +10,14 @@ def maxSubArray1(nums: List[int]) -> int:
     n = len(nums)
     sum = 0
     maxi = min_int
-    for i in range(n):
-        sum += nums[i]
+    for i in range(n):                      #TO KEEP THE TRACK OF INDEX OF SUBARRAYS:
+                                            #if (sum == 0): start = i
+        sum += nums[i]                          
+
 
         if sum > maxi:
             maxi = sum
-
+                                            #ansStart = start, ansEnd = i
         if sum < 0:
             sum = 0
             
@@ -28,7 +30,8 @@ def maxSubArray1(nums: List[int]) -> int:
 
 
 
-maxSubArray1([-2,1,-3,4,-1,2,1,-5,4])
+ 
+maxSubArray1([-7 ,-8, -16, -4, -8, -5, -7, -11, -10, -12, -4, -6, -4, -16, -10])
 
 
 
@@ -49,4 +52,4 @@ def maxSubArray2(nums: List[int]) -> int:
 
     print(maxi)
 
-maxSubArray2([-1])
+maxSubArray2([-7 ,-8, -16, -4, -8, -5, -7, -11, -10, -12, -4, -6, -4, -16, -10])
