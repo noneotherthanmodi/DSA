@@ -5,18 +5,22 @@ max_int = sys.maxsize
 min_int = -max_int - 1
 
 
-
+#OPTIMAL SOLUTION ->
 def maxSubArray1(nums: List[int]) -> int:
     n = len(nums)
     sum = 0
     maxi = min_int
     for i in range(n):
         sum += nums[i]
+
+        if sum > maxi:
+            maxi = sum
+
         if sum < 0:
             sum = 0
             
 
-        maxi = max(sum,maxi)
+        
 
 
     print(maxi)
@@ -45,4 +49,4 @@ def maxSubArray2(nums: List[int]) -> int:
 
     print(maxi)
 
-maxSubArray2([5,4,-1,7,8])
+maxSubArray2([-1])
