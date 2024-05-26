@@ -20,3 +20,31 @@ def alternateNumbers(a : List[int]) -> List[int]:
     print(a)
 
 alternateNumbers([1, 2, -3, -1, -2, 3])
+
+
+
+def alternateNumbers(a : List[int]) -> List[int]:
+    # Write your code here.
+    pos = 0
+    neg = 1
+    n = len(a) 
+    ans = [0] * n
+    
+    for i in range(n):
+        if a[i]>0:
+            ans[pos] = a[i]
+            pos += 2
+            
+
+        else:
+            ans[neg] = a[i]
+            neg += 2
+
+
+    
+    
+
+        
+    print(ans)
+
+alternateNumbers([1, 2, -3, -1, -2, 3])
