@@ -12,11 +12,21 @@ def leaders(A, N):
         
     print(ans)
 
-leaders([16,17,4,3,5,2],6)
+# leaders([16,17,4,3,5,2],6)
 
 
-import sys
+
 def leaders2(a,n):
-    int_max = sys.maxsize
-    int_min = -int_max -1 
+    ans = []
+    max_ele = a[n-1]
+    ans.append(max_ele)
     
+    for i in range(n-2,-1,-1):
+        if a[i] > max_ele:
+            ans.append(a[i])
+            max_ele = a[i]
+        
+    
+    print(ans[::-1])
+
+leaders2([16,17,4,3,5,2],6)
