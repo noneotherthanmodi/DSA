@@ -27,6 +27,6 @@ def leaders2(a,n):
             max_ele = a[i]
         
     
-    print(ans[::-1])
+    print(ans)
 
 leaders2([16,17,4,3,5,2],6)
