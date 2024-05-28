@@ -3,7 +3,7 @@
 #         print("*", end=" ")
 #     print()
 
-# asffas#
+
 # Path: 2.PY TO COUNT NUMBER OF DIGITS
 # from math import log10
 # num = int(input("Enter a number: "))
