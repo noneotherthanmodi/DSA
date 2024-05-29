@@ -17,7 +17,7 @@ subarraySum([1,2,3],3)
 
 
 
-#OPTIMAL ONE:
+#OPTIMAL ONE:  T() : O(n*logn), S(): O(n)
 from collections import defaultdict
 def subarraySum2(nums: List[int], k: int) -> int:
     n = len(nums)
