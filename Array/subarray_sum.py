@@ -12,4 +12,29 @@ def subarraySum(nums: List[int], k: int) -> int:
             
     print(count)
 
-subarraySum([1,2,3],7)
+subarraySum([1,2,3],3)
+
+
+
+
+#OPTIMAL ONE:
+from collections import defaultdict
+def subarraySum2(nums: List[int], k: int) -> int:
+    n = len(nums)
+    mpp = defaultdict(int)
+    preSum = 0
+    count = 0
+
+    mpp[0] = 1
+    for i in range(n):
+        preSum += nums[i]
+
+        remove = preSum - k
+
+        count += mpp[remove]
+
+        mpp[preSum] += 1
+
+    print(count)
+
+subarraySum2([1,2,3],3)
