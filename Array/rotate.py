@@ -1,5 +1,6 @@
 #ROTATE ARRAY TO THE RIGHT BY K STEPS
-def rotate_right(arr:[int],k:int):
+from typing import List 
+def rotate_right(arr:List[int],k:int):
     n = len(arr)
     k = k % n
     if k ==0:
@@ -24,7 +25,7 @@ rotate_right([1,2,3,4,5,6,7],3)
 
 
 #ROTATE ARRAY TO LEFT 
-def rotate_left(arr:[int],k:int):
+def rotate_left(arr:List[int],k:int):
     temp = []
     n = len(arr)
     k = k % n
@@ -52,7 +53,7 @@ rotate_left([1,2,3,4,5,6,7],3)
 
 
 #USING REVERSE FUNCTION TO REDUCE SPACE COMPLEXITY:
-def rotate_reversely(arr:[int],k:int):
+def rotate_reversely(arr:List[int],k:int):
 
     n = len(arr)
     k = k % n
