@@ -20,7 +20,7 @@ threeSum([-1, 0, 1, 2, -1, -4])
 
 
 
-#better with T(): O(N^2 * log(no. of unique triplets)), where N = size of the array.
+#better with T(): O(N^2 * log(no. of unique triplets(size of set))), where N = size of the array.
 def threeSum2(nums: List[int]) -> List[List[int]]:
     n = len(nums)
     
@@ -45,3 +45,39 @@ def threeSum2(nums: List[int]) -> List[List[int]]:
 
 
 threeSum2([-1, 0, 1, 2, -1, -4])
+
+
+
+#optimal:
+def threeSum3(nums: List[int]) -> List[List[int]]:
+    nums.sort()
+    n = len(nums)
+    ans = []
+    for i in range(n):
+        if(i > 0 and nums[i] == nums[i-1]):
+            continue
+
+        j = i+1
+        k = n-1
+
+        while(j < k):
+            sum = nums[i] + nums[j] + nums[k]
+            if sum < 0:
+                j += 1
+
+            elif sum > 0:
+                k -= 1
+        
+            else:
+                temp = [nums[i],nums[j],nums[k]]
+                ans.append(temp)
+                j += 1 
+                k -= 1
+                while j<k and nums[j] == nums[j-1]:
+                    j += 1
+                while j<k and nums[k] == nums[k+1]:
+                    k -= 1
+
+    print(ans)
+
+threeSum3([-2,0,1,1,2])
