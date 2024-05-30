@@ -23,17 +23,22 @@ def print_entire_row(n):
     for c in range(1,n+1):
         print(nCr(n-1,c-1),end = "")
 
-print_entire_row(2)
+# print_entire_row(2)
 
 
 
 
 def generate(numRows: int) -> List[List[int]]:
-    ans = 1
-    if numRows == 1:
-        return 1
+    ans = []
     
+    
+    for row in range(1,numRows+1):
+        temp = []
+        for col in range(1,row+1):
+            temp.append(nCr(row-1,col-1))
         
+        ans.append(temp)
+    
+    print(ans)
+generate(4)
 
-
-# generate(4)
