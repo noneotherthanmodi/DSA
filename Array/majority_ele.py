@@ -18,3 +18,19 @@ def majorityElement(nums: List[int]) -> List[int]:
     print(ans)
 
 majorityElement([3,2,3])
+
+
+#better:
+from collections import Counter
+def majorityElement(nums: List[int]) -> List[int]:
+    track = 0
+    n = len(nums)
+    ele = Counter(nums)
+    ans = []
+    
+    for num,count in ele.items():
+        if count> (n//3):
+            ans.append(num)
+            print(ans)
+
+majorityElement([3,2,3])
