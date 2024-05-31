@@ -80,4 +80,4 @@ def threeSum3(nums: List[int]) -> List[List[int]]:
 
     print(ans)
 
-threeSum3([-2,0,1,1,3])
+threeSum3([-2,0,1,1,2])
