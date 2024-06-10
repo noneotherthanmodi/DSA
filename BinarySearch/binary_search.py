@@ -1,4 +1,6 @@
 from typing import List 
+#Time : O(log base2 n)
+
 def search(nums: List[int], target: int) -> int:
     n = len(nums)
     low = 0
